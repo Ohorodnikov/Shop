@@ -1,0 +1,29 @@
+﻿<div *ngFor="let product of products">
+    <div class="row">
+        <div class="panel panel-danger">
+            <div class="panel-heading">
+                {{product.name}}
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="row">
+                            Name: {{product.name}}
+                        </div>
+                        <div class="row">
+                            Description: {{product.description}}
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="row">
+                           Price: {{product.price}}
+                        </div>
+                        <div class="row">
+                            <button type="button" class="btn btn-danger">Buy</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

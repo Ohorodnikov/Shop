@@ -1,0 +1,36 @@
+﻿<h1>Weather forecast</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+    
+
+<p>{{id}}</p>
+<button type="button" (click)="sort()">Sort</button>
+<div class="row">
+    <div *ngFor="let product of products">
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <a [routerLink]="['/../product']" [queryParams]="{ id: product.id}">
+                        <div class="panel text-center">
+                            <strong>{{product.name}}</strong>
+                        </div>
+                    </a>
+                </div>                
+                
+                <div class="panel-body">
+                    <div>
+                        Description: {{product.description}}
+                    </div>
+                    <div>
+                        Price: {{product.price}}
+                    </div>
+                    <div>
+                        Code: {{product.id}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

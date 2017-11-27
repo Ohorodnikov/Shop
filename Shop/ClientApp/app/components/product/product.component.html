@@ -1,0 +1,26 @@
+﻿<div class="panel panel-default">
+    <div class="panel-heading">
+        {{product.name}}        
+    </div>
+    <div class="panel-body">
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#main">Main Info</a></li>
+            <li><a data-toggle="tab" href="#full">Full Info</a></li>
+            <li><a data-toggle="tab" href="#another">Another tab</a></li>            
+        </ul>
+        <div class="tab-content">
+            <div id="main" class="tab-pane fade in active">
+                <main-info [name]=product.name [price]=product.price (addToBasket)="addToBasket($event)">                    
+                </main-info>
+            </div>
+            <div id="full" class="tab-pane fade">
+                <full-info [name]=product.name [description]=product.description>                    
+                </full-info>
+            </div>
+            <div id="another" class="tab-pane fade">
+
+            </div>
+        </div>
+    </div>
+</div>
+

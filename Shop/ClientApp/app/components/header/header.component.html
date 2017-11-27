@@ -1,0 +1,39 @@
+﻿<style>
+    .page-header{
+        background-color:darkcyan;
+        position: fixed;
+        width: 100%;
+        top:0;
+        display:block;
+        margin-top:0;
+        height: 100px;
+        padding-right:10%;
+    }
+</style>
+
+<header class="page-header center-block text-center">
+    <div class="row" style="padding-top: 20px">
+        <div class="col-md-9">
+            <div class="col-md-3">
+                <h3>Title</h3>
+            </div>
+            <div class="col-md-6" >
+                <div >
+                    <input class="form-control" type="text" placeholder="Type product here" />
+                </div>
+            </div>
+            <div class="col-md-3">
+                <button type="button" class="btn btn-success">Search</button>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <a [routerLink]="['/basket']">
+                <div class="panel panel-primary">
+                    <div class="panel-body">
+                        Basket   {{productCount}}
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</header>
