@@ -1,3 +1,15 @@
 {
-   "stack": "heroku-16"
+  "name": "angularshop-for-nemchenko",
+  "description": "Demo app on ASP.NET Core",
+  "repository": "https://github.com/Ohorodnikov/Shop",
+  "keywords": ["aspnet", "core"],
+  "stack": "heroku-16",
+  "buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-nodejs"
+    },
+    {
+      "url": "https://github.com/jincod/dotnetcore-buildpack"
+    }
+  ]
 }
