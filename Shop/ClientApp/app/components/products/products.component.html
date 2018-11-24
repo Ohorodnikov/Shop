@@ -1,11 +1,16 @@
-﻿<h1>Weather forecast</h1>
-
-<p>This component demonstrates fetching data from the server.</p>
-
-    
-
-<p>{{id}}</p>
-<button type="button" (click)="sort()">Sort</button>
+﻿<div class="pager">
+    <div class="row">
+        <div class="col-md-4">
+            <button type="button" (click)="prevPage()" class="btn btn-primary pull-left">Previous page</button>
+        </div>
+        <div class="col-md-4">
+            <button type="button" (click)="sort()" class="btn btn-info text-center">Sort</button>
+        </div>
+        <div class="col-md-4">
+            <button type="button" (click)="nextPage()" class="btn btn-primary pull-right">Next Page</button>
+        </div>
+    </div>
+</div>
 <div class="row">
     <div *ngFor="let product of products">
         <div class="col-md-4">
@@ -33,4 +38,3 @@
         </div>
     </div>
 </div>
-

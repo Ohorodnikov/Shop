@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Shop.Data.Models;
 using System;
 using System.Collections.Generic;
@@ -6,12 +8,13 @@ using System.Text;
 
 namespace Shop.Data
 {
-    public class ShopContext : DbContext
+    public class ShopContext : IdentityDbContext<User>
     {
         public DbSet<Category> Category { get; set; }
         public DbSet<Product> Product { get; set; }
         public DbSet<Purchase> Purchase { get; set; }
         public DbSet<User> User { get; set; }
+        public DbSet<ForumMessages> ForumMessages { get; set; }
 
         public ShopContext(DbContextOptions<ShopContext> options) : base(options)
         {
@@ -25,6 +28,8 @@ namespace Shop.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+
             modelBuilder.Entity<ProductPurchase>(entity =>
             {
                 entity.HasKey(m => new { m.ProductId, m.PurchaseId });
@@ -63,11 +68,35 @@ namespace Shop.Data
                 
             });
 
-            modelBuilder.Entity<User>(entity =>
+            modelBuilder.Entity<ForumMessages>(entity =>
             {
                 entity.HasKey(m => m.Id);
-                entity.Property(m => m.Name);
+                entity.Property(m => m.Message);
+                entity.Property(m => m.PublishedDateTime);
+
+                entity.HasOne(m => m.User)
+                    .WithMany(m => m.Comments)
+                    .HasForeignKey(m => m.UserId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Message_User");
+
+                entity.HasOne(m => m.Product)
+                    .WithMany(m => m.Comments)
+                    .HasForeignKey(m => m.ProductId)
+                    .HasConstraintName("FK_Message_Product")
+                    .OnDelete(DeleteBehavior.ClientSetNull);
+
+                entity.HasOne(m => m.ReplyTo)
+                    .WithMany(m => m.Answers)
+                    .HasForeignKey(m => m.ReplyToId)
+                    .OnDelete(DeleteBehavior.ClientSetNull);
             });
+
+            //modelBuilder.Entity<User>(entity =>
+            //{
+            //    entity.HasKey(m => m.Id);
+            //    entity.Property(m => m.Name);
+            //});
         }
 
     }

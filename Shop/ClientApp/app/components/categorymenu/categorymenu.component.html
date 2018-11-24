@@ -13,7 +13,7 @@
         <div class='navbar-collapse collapse'>
             <ul class='nav navbar-nav' *ngFor="let item of menu">
                 <li [routerLinkActive]="['link-active']">
-                    <a [routerLink]="['products']" [queryParams]="{ id: item.name}">
+                    <a [routerLink]="['products']" [queryParams]="{ id: item.id, page: 1}">
                         <span class='glyphicon glyphicon-education'></span> {{item.name}}
                     </a>
                 </li>

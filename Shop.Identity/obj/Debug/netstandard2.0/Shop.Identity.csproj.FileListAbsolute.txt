@@ -1,0 +1,9 @@
+C:\Data\Andersen\Shop\Shop.Identity\bin\Debug\netstandard2.0\Shop.Identity.deps.json
+C:\Data\Andersen\Shop\Shop.Identity\bin\Debug\netstandard2.0\Shop.Identity.dll
+C:\Data\Andersen\Shop\Shop.Identity\obj\Debug\netstandard2.0\Shop.Identity.csprojResolveAssemblyReference.cache
+C:\Data\Andersen\Shop\Shop.Identity\obj\Debug\netstandard2.0\Shop.Identity.csproj.CoreCompileInputs.cache
+C:\Data\Andersen\Shop\Shop.Identity\obj\Debug\netstandard2.0\Shop.Identity.AssemblyInfoInputs.cache
+C:\Data\Andersen\Shop\Shop.Identity\obj\Debug\netstandard2.0\Shop.Identity.AssemblyInfo.cs
+C:\Data\Andersen\Shop\Shop.Identity\bin\Debug\netstandard2.0\Shop.Identity.pdb
+C:\Data\Andersen\Shop\Shop.Identity\obj\Debug\netstandard2.0\Shop.Identity.dll
+C:\Data\Andersen\Shop\Shop.Identity\obj\Debug\netstandard2.0\Shop.Identity.pdb

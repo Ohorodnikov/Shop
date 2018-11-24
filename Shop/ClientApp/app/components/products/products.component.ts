@@ -14,7 +14,8 @@ export class ProductsComponent {
     private _http: Http;
     private _baseUrl: string;
     private sortedById: boolean;
-    
+    private currPage: number = 1;
+
     constructor(http: Http, @Inject('BASE_URL') baseUrl: string, route: ActivatedRoute)
     {            
         //this.subscription = route.params.subscribe(params => this.id = params['id']);       
@@ -24,13 +25,14 @@ export class ProductsComponent {
         route.queryParams.subscribe(
             (queryParam: any) => {
                 this.id = queryParam['id'];
+                this.currPage = queryParam['page'];
                 this.getProducts();
             }
         );              
     }
 
     getProducts() {
-        this._http.get(this._baseUrl + 'api/SampleData/Products?categoryId=' + this.id)
+        this._http.get(this._baseUrl + 'api/SampleData/Products?categoryId=' + this.id + '&page=' + this.currPage + '&itemsPerPage=' + 9)
             .subscribe(result => {
                 this.products = result.json() as Product[];
 
@@ -45,6 +47,21 @@ export class ProductsComponent {
             },
             error => console.error(error)
             ); 
+    }
+
+    nextPage() {
+        if (this.products.length == 9) {
+            this.currPage++;
+            this.getProducts();
+        }     
+    }
+
+    prevPage() {
+        if (this.currPage != 1) {
+            this.currPage--;
+            this.getProducts();
+        }
+        
     }
 
     sort() {

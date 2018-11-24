@@ -1,0 +1,42 @@
+﻿<div class="row">
+    <a href="/Documents/sales.xlsx">Download</a>
+    <table class="table" id="salesTable">
+        <tr>
+            <th onclick="sortTable(0)">Id</th>
+            <th onclick="sortTable(1)">User name</th>
+            <th onclick="sortTable(2)">Total price</th>
+            <th onclick="sortTable(3)">Date and Time</th>
+            <th>Details</th>
+        </tr>
+        <ng-container *ngFor="let purchase of purchases">
+            <tr>
+                <td>{{purchase.id}}</td>
+                <td>{{purchase.user.name}}</td>
+                <td>{{purchase.totalPrice}}</td>
+                <td>{{purchase.dateTime | date : "dd.MM.yy hh:mm:ss"}}</td>
+                <td><a class="btn btn-default" [routerLink]="['./purchase']" [queryParams]="{ id: purchase.id}">More</a></td>
+            </tr>
+        </ng-container>
+        
+        
+    </table>
+    <!--<div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                
+            </div>
+
+            <div class="panel-body">
+                <div>
+                    User: 
+                </div>
+                <div>
+                    Total price: 
+                </div>
+                <div>
+                    Time: 
+                </div>
+            </div>
+        </div>
+    </div>-->
+</div>

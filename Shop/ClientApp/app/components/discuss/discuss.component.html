@@ -1,0 +1,11 @@
+﻿Add new comment:
+<div class="form-group form-inline">
+    <input type="text" [(ngModel)]="message" class="form-control"/>
+    <button type="button" (click)="addComment()" class="form-control">Publish</button>
+    {{error}}
+</div>
+
+
+<comments [comments]="comments" [productId]="productId">
+
+</comments>

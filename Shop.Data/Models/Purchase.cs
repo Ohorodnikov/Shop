@@ -9,10 +9,10 @@ namespace Shop.Data.Models
         public int Id { get; set; }
         public DateTime DateTime { get; set; }
 
-        public ICollection<ProductPurchase> ProductPurchase { get; }
+        public ICollection<ProductPurchase> ProductPurchase { get; set; } = new List<ProductPurchase>();
 
 
-        public int UserId { get; set; }
+        public string UserId { get; set; }
         public User User { get; set; }
     }
 }

@@ -13,6 +13,8 @@ namespace Shop.Data.Models
         public int CategoryId { get; set; }
         public Category Category { get; set; }
 
-        public ICollection<ProductPurchase> ProductPurchase { get; }
+        public ICollection<ProductPurchase> ProductPurchase { get; set; } = new List<ProductPurchase>();
+
+        public ICollection<ForumMessages> Comments { get; set; } = new List<ForumMessages>();
     }
 }

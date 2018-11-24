@@ -11,5 +11,7 @@ namespace Shop.Data.Models
 
         public int PurchaseId { get; set; }
         public Purchase Purchase { get; set; }
+
+        public int Count { get; set; }
     }
 }

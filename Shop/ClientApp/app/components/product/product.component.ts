@@ -10,18 +10,10 @@ import { Product } from '../../models/product';
     selector: 'product',
     templateUrl: './product.component.html'    
 })
-export class ProductComponent implements OnInit {
-    ngOnInit() {
-        this.route.queryParams.subscribe(
-            (queryParam: any) => {
-                this.id = queryParam['id'];
-                this.getProduct();
-            }
-        );
-    }
+export class ProductComponent implements OnInit {  
 
     public product = <Product>{};
-    public id: number;
+    public _id: number;
     private _http: Http;
     private _baseUrl: string;
     private route: ActivatedRoute;
@@ -36,17 +28,29 @@ export class ProductComponent implements OnInit {
         
     }   
 
+    ngOnInit() {
+        this.route.queryParams.subscribe(
+            (queryParam: any) => {
+                this._id = queryParam['id'];
+                this.getProduct();
+                
+            }
+        );
+    }
+
     getProduct() {
-        this._http.get(this._baseUrl + 'api/SampleData/GetProduct?productId=' + this.id)
+        this._http.get(this._baseUrl + 'api/SampleData/GetProduct?productId=' + this._id)
             .subscribe(result => {
-                this.product = result.json() as Product;                  
+                this.product = result.json() as Product; 
+                console.log(this.product);
             },
             error => console.error(error)
         );        
     }   
 
-    addToBasket() {       
-        this.basketService.addProduct(this.product.id, this.product.name, this.product.description, this.product.price);
+    addToBasket() {     
+        console.log("Add to basket: " + this._id);
+        this.basketService.addProduct(this.product.id);
     }
 
 }

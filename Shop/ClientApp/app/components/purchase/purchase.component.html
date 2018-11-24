@@ -1,0 +1,19 @@
+﻿<div class="alert alert-success hidden" id="success">
+    <strong>Success!</strong> Indicates a successful or positive action.
+</div>
+<div class="panel">
+    <input type="hidden" id="paypalToken" value="{{paypalToken}}" />
+    <input type="hidden" id="totalPrice" value="{{totalPrice}}" />
+    <input type="hidden" id="userName" value="{{userName}}" />
+    <div class="panel-heading">
+        <h2></h2>
+    </div>
+    <div class="panel-body">
+        <input type="text" [(ngModel)]="userName" id="userName"/>
+        <p>Total price: {{totalPrice}}</p>
+    </div>
+    <div class="panel-footer">        
+        <button type="button" id="viaPaypal" onclick="usePaypal()">Pay via Paypal</button>        
+        <button type="button" id="buyAll" class="hidden"></button>
+    </div>
+</div>

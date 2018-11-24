@@ -5,10 +5,16 @@
     <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
     <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
     <IsPackable>false</IsPackable>
+    <UserSecretsId>ff955f11-c224-47f8-8a6b-9b2007b85c7c</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Braintree" Version="3.10.0" />
+    <PackageReference Include="EPPlus.Core" Version="1.5.4" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="2.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.0" />
+    <PackageReference Include="PayPal" Version="1.9.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,30 +27,52 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\app\components\admin_main\adminmain.component.ts" />
+    <None Remove="ClientApp\app\components\admin_purchaseinfo\purchaseinfo.component.ts" />
     <None Remove="ClientApp\app\components\basket\basket.component.ts" />
     <None Remove="ClientApp\app\components\categorymenu\categorymenu.component.ts" />
+    <None Remove="ClientApp\app\components\comment\comment.component.ts" />
+    <None Remove="ClientApp\app\components\discuss\discuss.component.ts" />
     <None Remove="ClientApp\app\components\fullinfo.component.ts" />
     <None Remove="ClientApp\app\components\header\header.component.ts" />
     <None Remove="ClientApp\app\components\maininfo\maininfo.component.ts" />
     <None Remove="ClientApp\app\components\product\product.component.ts" />
+    <None Remove="ClientApp\app\components\purchase\purchase.component.ts" />
+    <None Remove="ClientApp\app\components\search\search.component.ts" />
+    <None Remove="ClientApp\app\models\comment.ts" />
     <None Remove="ClientApp\app\models\product.ts" />
+    <None Remove="ClientApp\app\models\purchase.ts" />
+    <None Remove="ClientApp\app\models\purchaseProduct.ts" />
+    <None Remove="ClientApp\app\models\user.ts" />
     <None Remove="ClientApp\app\services\basket.service.ts" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Shop.Data\Shop.Data.csproj" />
+    <ProjectReference Include="..\Shop.Infrastructure\Shop.Infrastructure.csproj" />
+    <ProjectReference Include="..\Shop.PayPal\Shop.PayPal.csproj" />
     <ProjectReference Include="..\Shop.Service\Shop.Service.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\app\components\admin_main\adminmain.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\admin_purchaseinfo\purchaseinfo.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\basket\basket.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\categorymenu\categorymenu.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\comment\comment.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\discuss\discuss.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\fullinfo\fullinfo.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\header\header.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\maininfo\maininfo.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\products\products.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\product\product.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\purchase\purchase.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\search\search.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\comment.ts" />
     <TypeScriptCompile Include="ClientApp\app\models\product.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\purchase.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\purchaseProduct.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\user.ts" />
     <TypeScriptCompile Include="ClientApp\app\services\basket.service.ts" />
   </ItemGroup>
 

@@ -13,20 +13,20 @@
 
 <header class="page-header center-block text-center">
     <div class="row" style="padding-top: 20px">
-        <div class="col-md-9">
-            <div class="col-md-3">
+        <div class="col-md-7 col-lg-7 col-sm-7">
+            <div class="col-md-3 col-sm-3">
                 <h3>Title</h3>
             </div>
-            <div class="col-md-6" >
+            <div class="col-md-6 col-sm-6" >
                 <div >
-                    <input class="form-control" type="text" placeholder="Type product here" />
+                    <input class="form-control" [(ngModel)]="searchCriteria" type="text" placeholder="Type product here" />
                 </div>
             </div>
-            <div class="col-md-3">
-                <button type="button" class="btn btn-success">Search</button>
+            <div class="col-md-3 col-sm-3">
+                <button type="button" class="btn btn-success" [routerLink]="['search']" [queryParams]="{ criteria: searchCriteria, page: 1}">Search</button>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 col-lg-3 col-sm-3">
             <a [routerLink]="['/basket']">
                 <div class="panel panel-primary">
                     <div class="panel-body">
@@ -35,5 +35,53 @@
                 </div>
             </a>
         </div>
+        <div class="col-md-2 col-lg-2 col-sm-2">
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#login">Admin</button>
+        </div>
     </div>
 </header>
+
+<div id="login" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Log In</h4>
+            </div>
+            <div class="modal-body">
+                <p>{{result}}</p>
+                Email: <input type="email" [(ngModel)]="email"/>
+                Password: <input type="password" [(ngModel)]="password"/>
+                <a data-toggle="modal" data-dismiss="modal" data-target="#register">Register</a>
+            </div>
+            <div class="modal-footer">
+                <button type="button" (click)="login()" class="btn btn-default">Log In</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div id="register" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+
+            </div>
+            <div class="modal-body">
+                {{result}}
+                Email: <input type="email" [(ngModel)]="email" class="form-control"/>
+                Password: <input type="password" [(ngModel)]="password" class="form-control"/>
+                Confirm Password: <input type="password" [(ngModel)]="confirmPassword" class="form-control"/>
+                {{error}}
+            </div>
+            <div class="modal-footer">
+                <button type="button" (click)="register()" class="btn btn-default">Register</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
