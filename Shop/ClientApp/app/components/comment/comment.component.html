@@ -5,9 +5,6 @@
                 <div *ngIf="comment.answers.length > 0; then show else noAnswers"></div>
 
                 <div class="col-md-6">
-                    <markdown>
-                        {{comment.userName}}: {{comment.message}}
-                    </markdown>
                 </div>
                 <div class="col-md-1">
                     <ng-template #show>
@@ -29,7 +26,6 @@
                         <textarea style="width:100%;resize:none" rows="5" type="text" [(ngModel)]="message[message.length]" class="form-control"></textarea>
                     </div>
                     <div class="col-md-6" style="word-wrap:break-word">
-                        <markdown [data]="message[message.length - 1]"></markdown>
                     </div>
                 </div>
 

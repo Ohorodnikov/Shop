@@ -5,8 +5,6 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { MarkdownModule } from 'angular2-markdown';
-
 import { AppComponent } from './components/app/app.component';
 import { NavMenuComponent } from './components/navmenu/navmenu.component';
 import { HomeComponent } from './components/home/home.component';
@@ -45,7 +43,6 @@ import { CommentComponent } from './components/comment/comment.component';
     ],
     imports: [
         BrowserModule,
-        MarkdownModule,
         CommonModule,
         HttpModule,
         FormsModule,

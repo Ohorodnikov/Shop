@@ -1,0 +1,8 @@
+C:\Data\Andersen\Shop\Shop.Data\bin\Release\netcoreapp2.0\Shop.Data.deps.json
+C:\Data\Andersen\Shop\Shop.Data\bin\Release\netcoreapp2.0\Shop.Data.dll
+C:\Data\Andersen\Shop\Shop.Data\bin\Release\netcoreapp2.0\Shop.Data.pdb
+C:\Data\Andersen\Shop\Shop.Data\obj\Release\netcoreapp2.0\Shop.Data.csproj.CoreCompileInputs.cache
+C:\Data\Andersen\Shop\Shop.Data\obj\Release\netcoreapp2.0\Shop.Data.AssemblyInfoInputs.cache
+C:\Data\Andersen\Shop\Shop.Data\obj\Release\netcoreapp2.0\Shop.Data.AssemblyInfo.cs
+C:\Data\Andersen\Shop\Shop.Data\obj\Release\netcoreapp2.0\Shop.Data.dll
+C:\Data\Andersen\Shop\Shop.Data\obj\Release\netcoreapp2.0\Shop.Data.pdb
